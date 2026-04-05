@@ -14,7 +14,7 @@ export default function Hero() {
     >
       {/* Dark overlay */}
       <div
-        className="absolute inset-0 z-0"
+        className="hero-overlay absolute inset-0 z-0"
         style={{ background: "rgba(10, 10, 18, 0.82)" }}
       />
 
@@ -39,8 +39,8 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
 
-        {/* Star + lines — branded accent mark, keep */}
-        <div className="flex justify-center items-center gap-4 mb-8">
+        {/* Star + lines — branded accent mark */}
+        <div className="hero-star flex justify-center items-center gap-4 mb-8">
           <div className="h-px w-20 bg-[#eabfd3]/30" />
           <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-12 h-12" />
           <div className="h-px w-20 bg-[#eabfd3]/30" />
@@ -48,29 +48,29 @@ export default function Hero() {
 
         {/* Eyebrow */}
         <p
-          className="text-[#eabfd3] text-lg sm:text-xl tracking-[0.3em] uppercase mb-4"
+          className="hero-eyebrow text-[#eabfd3] text-lg sm:text-xl tracking-[0.3em] uppercase mb-4"
           style={{ fontFamily: "'Bebas Neue', sans-serif" }}
         >
           Alpharetta, Georgia
         </p>
 
-        {/* H1 */}
+        {/* H1 — each line animates in sequence */}
         <h1
           className="text-white text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight mb-6"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          Your Trusted<br />
-          <span className="text-[#eabfd3]">Bookkeeper</span><br />
-          in Atlanta, GA
+          <span className="hero-h1-1 block">Your Trusted</span>
+          <span className="hero-h1-2 block text-[#eabfd3]">Bookkeeper</span>
+          <span className="hero-h1-3 block">in Atlanta, GA</span>
         </h1>
 
-        <p className="text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="hero-sub text-white/60 text-lg sm:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
           We handle the numbers so you can handle your business.
           Clean books. No stress. Just results.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="hero-ctas flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-[#eabfd3] hover:bg-[#d4a0b8] text-[#101010] font-bold text-lg px-9 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto min-h-[52px]"
@@ -86,7 +86,7 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 flex flex-col sm:flex-row justify-center gap-10 sm:gap-16">
+        <div className="hero-stats mt-16 flex flex-col sm:flex-row justify-center gap-10 sm:gap-16">
           {[
             { num: "50+",  label: "Happy Clients" },
             { num: "10+",  label: "Years Experience" },

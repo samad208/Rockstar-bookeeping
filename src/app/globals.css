@@ -46,6 +46,30 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
 .fade-in-delay-3 { transition-delay: 0.3s; }
 .fade-in-delay-4 { transition-delay: 0.4s; }
 
+/* ─── Hero entrance animations ──────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.hero-star    { animation: heroScaleIn 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.1s both; }
+.hero-eyebrow { animation: heroFadeUp  0.6s ease 0.35s both; }
+.hero-h1-1    { animation: heroFadeUp  0.6s ease 0.55s both; }
+.hero-h1-2    { animation: heroFadeUp  0.6s ease 0.72s both; }
+.hero-h1-3    { animation: heroFadeUp  0.6s ease 0.89s both; }
+.hero-sub     { animation: heroFadeUp  0.6s ease 1.05s both; }
+.hero-ctas    { animation: heroFadeUp  0.6s ease 1.2s  both; }
+.hero-stats   { animation: heroFadeUp  0.6s ease 1.35s both; }
+.hero-overlay { animation: heroFadeIn  1.2s ease 0s    both; }
+
 /* ─── Tool logos (SocialProof) ───────────────── */
 .tool-logo {
   height: 28px;
