@@ -1,60 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors */
-  --color-primary:        #1a3c5e;
-  --color-primary-light:  #2563a8;
-  --color-accent:         #f59e0b;
-  --color-accent-light:   #fbbf24;
-  --color-surface:        #f8fafc;
-  --color-dark-bg:        #0f172a;
-  --color-text:           #0f172a;
-  --color-muted:          #475569;
-  --color-border:         #e2e8f0;
+  /* ── Brand Colors ── */
+  --color-dark:         #101010;
+  --color-pink:         #C4849A;
+  --color-pink-deep:    #A2687F;
+  --color-pink-light:   #FDF5F7;
+  --color-pink-muted:   #F0D8E0;
+  --color-surface:      #FAFAFA;
+  --color-text:         #101010;
+  --color-muted:        #6B6B6B;
+  --color-border:       #E8D5DB;
+  --color-white:        #FFFFFF;
 
-  /* Fonts */
-  --font-heading: 'Sora', sans-serif;
-  --font-body:    'Inter', sans-serif;
+  /* ── Fonts ── */
+  --font-display:    'Playfair Display', serif;
+  --font-sub:        'Bebas Neue', sans-serif;
+  --font-body:       'Inter', sans-serif;
 }
 
-/* ─── Reset & Base ─────────────────────────────── */
+/* ─── Reset ─────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
   color: var(--color-text);
-  background: #ffffff;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
-}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
 
-/* ─── Scroll fade-in animation ─────────────────── */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
+/* ─── Scroll animations ──────────────────────── */
 .fade-in {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
 .fade-in-delay-3 { transition-delay: 0.3s; }

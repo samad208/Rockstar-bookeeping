@@ -25,37 +25,39 @@ export default function HowItWorks() {
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="text-center mb-14">
-          <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Simple Process</p>
-          <h2 className="text-[#0f172a] text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style={{ fontFamily: "Sora,sans-serif" }}>
+          <p className="text-[#C4849A] text-lg tracking-[0.25em] uppercase mb-3"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Simple Process</p>
+          <h2 className="text-[#101010] text-4xl sm:text-5xl font-black mb-4"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
             Getting Started Is Easy
           </h2>
-          <p className="text-[#475569] text-lg max-w-xl mx-auto">
-            Three simple steps and you'll never have to stress about your books again.
+          <p className="text-[#6B6B6B] text-lg max-w-xl mx-auto">
+            Three simple steps and you&apos;ll never stress about your books again.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Connector line (desktop only) */}
-          <div className="hidden md:block absolute top-10 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#e2e8f0] via-[#f59e0b] to-[#e2e8f0] z-0" />
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <div
               key={i}
-              className="relative z-10 text-center bg-[#f8fafc] rounded-2xl p-8 border border-slate-200 hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-in"
+              className="relative text-center bg-[#FDF5F7] rounded-2xl p-8 border border-[#E8D5DB] hover:border-[#C4849A] hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-in"
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="w-16 h-16 rounded-full bg-[#1a3c5e] flex items-center justify-center mx-auto mb-5 shadow-md">
-                <step.icon size={26} className="text-white" />
+              <div className="w-14 h-14 rounded-full bg-[#101010] flex items-center justify-center mx-auto mb-4 shadow-md">
+                <step.icon size={24} className="text-white" />
               </div>
-              <div className="text-[#f59e0b] text-5xl font-extrabold mb-2 leading-none" style={{ fontFamily: "Sora,sans-serif" }}>
+              <div
+                className="text-[#C4849A] text-5xl font-black mb-2 leading-none"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 {step.number}
               </div>
-              <h3 className="text-[#0f172a] font-bold text-xl mb-3" style={{ fontFamily: "Sora,sans-serif" }}>
+              <h3 className="text-[#101010] font-black text-xl mb-3"
+                style={{ fontFamily: "'Playfair Display', serif" }}>
                 {step.title}
               </h3>
-              <p className="text-[#475569] text-base leading-relaxed">{step.description}</p>
+              <p className="text-[#6B6B6B] text-base leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

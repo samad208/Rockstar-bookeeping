@@ -12,7 +12,7 @@ const testimonials = [
     business: "Restaurant Owner, Atlanta",
   },
   {
-    quote: "My books were a mess for two years. They caught everything up in a few weeks and set me up right. Tax season was actually painless this year.",
+    quote: "My books were a mess for two years. They caught everything up in a few weeks. Tax season was actually painless this year.",
     name: "Jessica L.",
     business: "Freelance Designer",
   },
@@ -20,12 +20,13 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-[#f8fafc] py-20 lg:py-28">
+    <section className="bg-[#101010] py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="text-center mb-14">
-          <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-widest mb-3">Client Love</p>
-          <h2 className="text-[#0f172a] text-3xl sm:text-4xl lg:text-5xl font-extrabold" style={{ fontFamily: "Sora,sans-serif" }}>
+          <p className="text-[#C4849A] text-lg tracking-[0.25em] uppercase mb-3"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Client Love</p>
+          <h2 className="text-white text-4xl sm:text-5xl font-black"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
             What Our Clients Say
           </h2>
         </div>
@@ -34,20 +35,21 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
+              className="bg-white/5 border border-white/10 hover:border-[#C4849A]/50 rounded-2xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, j) => (
-                  <Star key={j} size={16} className="text-[#f59e0b]" fill="#f59e0b" />
+                  <Star key={j} size={16} className="text-[#C4849A]" fill="#C4849A" />
                 ))}
               </div>
-              <p className="text-[#0f172a] text-base leading-relaxed mb-6 flex-1">
+              <p className="text-white/80 text-base leading-relaxed mb-6 flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="border-t border-slate-100 pt-5">
-                <p className="font-bold text-[#0f172a] text-sm" style={{ fontFamily: "Sora,sans-serif" }}>{t.name}</p>
-                <p className="text-[#475569] text-xs mt-0.5">{t.business}</p>
+              <div className="border-t border-white/10 pt-5">
+                <p className="font-black text-white text-sm"
+                  style={{ fontFamily: "'Playfair Display', serif" }}>{t.name}</p>
+                <p className="text-white/40 text-xs mt-0.5">{t.business}</p>
               </div>
             </div>
           ))}
