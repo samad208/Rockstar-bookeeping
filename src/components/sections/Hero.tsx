@@ -5,17 +5,23 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#101010]"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1664575600796-ffa828c5cb6e?w=1600&q=80')",
-        backgroundSize: "cover",
-        backgroundPosition: "center top",
-      }}
     >
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        aria-hidden="true"
+      >
+        <source src="/atlanta-hero.mp4" type="video/mp4" />
+      </video>
+
       {/* Dark overlay */}
       <div
-        className="hero-overlay absolute inset-0 z-0"
-        style={{ background: "rgba(10, 10, 18, 0.82)" }}
+        className="hero-overlay absolute inset-0 z-[1]"
+        style={{ background: "rgba(10, 10, 18, 0.78)" }}
       />
 
       {/* Large decorative star — top right */}
