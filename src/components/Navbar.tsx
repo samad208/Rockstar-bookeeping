@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Star } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Services",      href: "/services" },
@@ -35,28 +36,15 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div className="flex items-center">
-              <span
-                className="text-white font-black text-2xl tracking-tight leading-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                ROCK
-              </span>
-              <Star size={22} className="text-[#C4849A] fill-[#C4849A] mx-1 group-hover:scale-110 transition-transform" />
-              <span
-                className="text-white font-black text-2xl tracking-tight leading-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                AR
-              </span>
-            </div>
-            <span
-              className="text-[#C4849A] text-[9px] font-bold tracking-[0.25em] uppercase self-end mb-0.5"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: "0.3em" }}
-            >
-              Bookkeeping
-            </span>
+          <Link href="/" className="shrink-0 group">
+            <Image
+              src="/logo-white.svg"
+              alt="Rockstar Bookkeeping"
+              width={180}
+              height={46}
+              className="h-10 w-auto group-hover:opacity-90 transition-opacity"
+              priority
+            />
           </Link>
 
           {/* Desktop links */}
@@ -97,9 +85,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-[#101010] flex flex-col items-center justify-center gap-8 md:hidden">
-          <div className="flex items-center gap-2 mb-4">
-            <Star size={32} className="text-[#C4849A] fill-[#C4849A]" />
-          </div>
+          <Image src="/logo-white.svg" alt="Rockstar Bookkeeping" width={200} height={51} className="h-12 w-auto mb-4" />
           {navLinks.map((link) => (
             <Link
               key={link.href}

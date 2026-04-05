@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   "Monthly Bookkeeping",
@@ -27,19 +28,15 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-1.5 mb-5">
-              <span className="text-white font-black text-2xl"
-                style={{ fontFamily: "'Playfair Display', serif" }}>ROCK</span>
-              <Star size={20} className="text-[#C4849A] fill-[#C4849A]" />
-              <span className="text-white font-black text-2xl"
-                style={{ fontFamily: "'Playfair Display', serif" }}>AR</span>
-            </div>
-            <p
-              className="text-[#C4849A] text-xs tracking-[0.3em] uppercase mb-4"
-              style={{ fontFamily: "'Bebas Neue', sans-serif" }}
-            >
-              Bookkeeping
-            </p>
+            <Link href="/" className="inline-block mb-5">
+              <Image
+                src="/logo-white.svg"
+                alt="Rockstar Bookkeeping"
+                width={200}
+                height={51}
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-4">
               We handle the numbers so you can rock your business. Professional bookkeeping for small business owners in Alpharetta and greater Atlanta.
             </p>
