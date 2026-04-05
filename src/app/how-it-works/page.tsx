@@ -2,14 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { PhoneCall, Search, TrendingUp, ChevronDown, ArrowRight } from "lucide-react";
 import CTA from "@/components/sections/CTA";
 
 const steps = [
   {
     number: "01",
-    icon: PhoneCall,
     title: "Book a Free Call",
     description:
       "Schedule a quick 20-minute call — no pressure, no sales pitch. We'll have a real conversation about what's going on with your finances and what you actually need.",
@@ -20,7 +17,6 @@ const steps = [
   },
   {
     number: "02",
-    icon: Search,
     title: "We Review Your Books",
     description:
       "After our call, we take a close look at your financials — wherever they are, however messy they might be. We put together a clear plan and give you a straight quote.",
@@ -31,7 +27,6 @@ const steps = [
   },
   {
     number: "03",
-    icon: TrendingUp,
     title: "Clean Financials Every Month",
     description:
       "Once you're set up, we keep your books clean and current month after month. You get easy-to-read reports delivered to your inbox — no spreadsheet skills required.",
@@ -88,10 +83,10 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
           style={{ fontFamily: "'Playfair Display', serif" }}>
           {question}
         </span>
-        <ChevronDown
-          size={20}
-          className={`text-[#eabfd3] shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        />
+        <i
+          className={`ph ph-caret-down text-[#eabfd3] shrink-0 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          style={{ fontSize: '20px' }}
+        ></i>
       </button>
       {open && (
         <p className="text-[#6B6B6B] text-base leading-relaxed pb-5">{answer}</p>
@@ -105,9 +100,6 @@ export default function HowItWorksPage() {
     <>
       {/* Hero */}
       <section className="bg-[#101010] pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute -top-10 -right-10 w-64 h-64 opacity-[0.07] pointer-events-none select-none">
-          <Image src="/star-icon.svg" alt="" width={256} height={256} className="w-full h-full" />
-        </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-[#eabfd3] text-lg tracking-[0.25em] uppercase mb-4"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Simple Process</p>
@@ -126,38 +118,31 @@ export default function HowItWorksPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {steps.map((step, i) => (
             <div key={i} className="bg-[#FDF5F7] rounded-2xl border border-[#E8D5DB] p-8 sm:p-10 relative overflow-hidden">
-              {/* Watermark */}
-              <div className="absolute top-4 right-4 w-12 h-12 opacity-10 pointer-events-none">
-                <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-full h-full" />
+              {/* Large background number */}
+              <div
+                className="absolute top-4 right-6 text-[#eabfd3] font-bold leading-none pointer-events-none select-none"
+                style={{ fontSize: '80px', opacity: 0.15 }}
+              >
+                {step.number}
               </div>
-              <div className="flex items-start gap-6">
-                <div className="shrink-0">
-                  <div className="w-14 h-14 rounded-full bg-[#101010] flex items-center justify-center shadow-md">
-                    <step.icon size={24} className="text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <div className="text-[#eabfd3] text-5xl font-black leading-none mb-2"
-                    style={{ fontFamily: "'Playfair Display', serif" }}>
-                    {step.number}
-                  </div>
-                  <h2 className="text-[#101010] text-2xl sm:text-3xl font-black mb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}>
-                    {step.title}
-                  </h2>
-                  <p className="text-[#6B6B6B] text-base leading-relaxed mb-6">{step.description}</p>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="bg-white rounded-xl p-5 border border-[#E8D5DB]">
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#eabfd3] mb-2"
-                        style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Your experience</p>
-                      <p className="text-[#6B6B6B] text-sm leading-relaxed">{step.clientExperience}</p>
-                    </div>
-                    <div className="bg-[#101010] rounded-xl p-5">
-                      <p className="text-xs font-bold uppercase tracking-wider text-[#eabfd3] mb-2"
-                        style={{ fontFamily: "'Bebas Neue', sans-serif" }}>What we handle</p>
-                      <p className="text-white/70 text-sm leading-relaxed">{step.weHandle}</p>
-                    </div>
+              <div className="relative z-10">
+                <h2 className="text-[#101010] text-2xl sm:text-3xl font-black mb-3"
+                  style={{ fontFamily: "'Playfair Display', serif" }}>
+                  {step.title}
+                </h2>
+                <p className="text-[#6B6B6B] text-base leading-relaxed mb-6">{step.description}</p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="bg-white rounded-xl p-5 border border-[#E8D5DB]">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#eabfd3] mb-2"
+                      style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Your experience</p>
+                    <p className="text-[#6B6B6B] text-sm leading-relaxed">{step.clientExperience}</p>
+                  </div>
+                  <div className="bg-[#101010] rounded-xl p-5">
+                    <p className="text-xs font-bold uppercase tracking-wider text-[#eabfd3] mb-2"
+                      style={{ fontFamily: "'Bebas Neue', sans-serif" }}>What we handle</p>
+                    <p className="text-white/70 text-sm leading-relaxed">{step.weHandle}</p>
                   </div>
                 </div>
               </div>
@@ -170,7 +155,7 @@ export default function HowItWorksPage() {
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#eabfd3] hover:bg-[#d4a0b8] text-[#101010] font-bold text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5"
           >
-            Book Your Free Call <ArrowRight size={20} />
+            Book Your Free Call <i className="ph ph-arrow-right" style={{ fontSize: '20px' }}></i>
           </Link>
         </div>
       </section>

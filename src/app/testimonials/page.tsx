@@ -93,10 +93,8 @@ export default function TestimonialsPage() {
           <p className="text-white/70 text-lg max-w-xl mx-auto">
             Real small business owners. Real results. No fake reviews, no corporate fluff.
           </p>
-          <div className="flex justify-center gap-2 mt-6">
-            {[...Array(5)].map((_, i) => (
-              <Image key={i} src="/star-icon.svg" alt="" width={22} height={22} className="w-5.5 h-5.5" />
-            ))}
+          <div className="mt-6" style={{ color: '#E8A0B4', fontSize: '22px', letterSpacing: '4px' }}>
+            ★★★★★
           </div>
           <p className="text-white/50 text-sm mt-2">5.0 average across all clients</p>
         </div>
@@ -128,7 +126,7 @@ export default function TestimonialsPage() {
                 className="bg-white rounded-2xl p-7 border border-[#E8D5DB] hover:border-[#eabfd3] hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <Image src="/star-icon.svg" alt="" width={28} height={28} className="w-7 h-7 mb-4 opacity-90" />
+                <div className="mb-4" style={{ color: '#E8A0B4', fontSize: '14px', letterSpacing: '2px' }}>★★★★★</div>
                 <p className="text-[#101010] text-base leading-relaxed flex-1 mb-5">
                   &ldquo;{t.quote}&rdquo;
                 </p>

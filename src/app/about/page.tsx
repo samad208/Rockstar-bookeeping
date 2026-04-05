@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle, ArrowRight, Target, MessageCircle, Heart } from "lucide-react";
 import CTA from "@/components/sections/CTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -14,17 +13,17 @@ export const metadata: Metadata = {
 
 const values = [
   {
-    icon: Target,
+    icon: "ph-crosshair",
     title: "Accurate",
     description: "Every number matters. We double-check our work so you can trust your financials completely.",
   },
   {
-    icon: MessageCircle,
+    icon: "ph-chat-circle",
     title: "Responsive",
     description: "Got a question? We respond fast. You'll never be left wondering about your books.",
   },
   {
-    icon: Heart,
+    icon: "ph-heart",
     title: "Personal",
     description: "We treat your business like it's our own. Because your success is literally our business.",
   },
@@ -69,16 +68,17 @@ export default function AboutPage() {
             {/* Photo */}
             <div className="flex justify-center lg:justify-end fade-in">
               <div className="relative">
-                <div className="w-72 h-72 sm:w-96 sm:h-96 rounded-2xl bg-[#101010] flex items-center justify-center shadow-xl overflow-hidden">
-                  {/* Replace with: <Image src="/founder.jpg" alt="Rockstar Bookkeeping founder" fill className="object-cover" /> */}
-                  <div className="text-center text-white px-8">
-                    <div className="text-7xl mb-3">👩‍💼</div>
-                    <p className="text-white/40 text-xs uppercase tracking-widest"
-                      style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Owner Photo</p>
-                  </div>
-                </div>
+                {/* REPLACE: swap this src with the real founder photo */}
+                <Image
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+                  alt="Rockstar Bookkeeping founder"
+                  width={384}
+                  height={480}
+                  className="rounded-2xl object-cover shadow-xl"
+                  style={{ maxWidth: '384px', width: '100%' }}
+                />
                 <div className="absolute -bottom-4 -right-4 bg-[#eabfd3] rounded-xl px-5 py-3 shadow-lg flex items-center gap-2">
-                  <Image src="/star-icon.svg" alt="" width={18} height={18} className="w-4.5 h-4.5 shrink-0" />
+                  <Image src="/star-icon.svg" alt="" width={16} height={16} className="w-4 h-4 shrink-0" />
                   <div>
                     <p className="text-white font-bold text-xs">QuickBooks</p>
                     <p className="text-white/80 text-[10px]">ProAdvisor</p>
@@ -108,7 +108,7 @@ export default function AboutPage() {
               <ul className="space-y-2.5 mb-8">
                 {credentials.map((c) => (
                   <li key={c} className="flex items-center gap-3 text-[#101010] text-sm font-medium">
-                    <CheckCircle size={17} className="text-[#eabfd3] shrink-0" />
+                    <i className="ph ph-check-circle text-[#eabfd3] shrink-0" style={{ fontSize: '17px' }}></i>
                     {c}
                   </li>
                 ))}
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#eabfd3] hover:bg-[#d4a0b8] text-[#101010] font-bold px-7 py-3.5 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5"
               >
-                Let&apos;s Work Together <ArrowRight size={17} />
+                Let&apos;s Work Together <i className="ph ph-arrow-right" style={{ fontSize: '17px' }}></i>
               </Link>
             </div>
           </div>
@@ -143,8 +143,8 @@ export default function AboutPage() {
                 className="bg-white rounded-2xl p-8 border border-[#E8D5DB] text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-in"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="w-14 h-14 rounded-full bg-[#101010] flex items-center justify-center mx-auto mb-5 shadow-md">
-                  <v.icon size={24} className="text-white" />
+                <div className="w-14 h-14 rounded-full bg-[#101010] flex items-center justify-center mx-auto mb-5 shadow-md text-white">
+                  <i className={`ph ${v.icon}`} style={{ fontSize: '24px', color: 'inherit' }}></i>
                 </div>
                 <h3 className="text-[#101010] font-black text-xl mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}>{v.title}</h3>

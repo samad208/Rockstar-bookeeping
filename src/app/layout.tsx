@@ -29,6 +29,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+      </head>
       <body className="flex flex-col min-h-full">
         <Navbar />
         <main className="flex-1">{children}</main>

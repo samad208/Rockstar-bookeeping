@@ -1,27 +1,26 @@
 import Link from "next/link";
-import { BookOpen, Users, Settings, RefreshCw, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: BookOpen,
+    icon: "ph-book-open",
     name: "Monthly Bookkeeping",
     description: "Accurate, on-time books every month. No more mystery numbers — just clear financials you can act on.",
     href: "/services#bookkeeping",
   },
   {
-    icon: Users,
+    icon: "ph-users",
     name: "Payroll Management",
     description: "Pay your team on time, every time. We handle payroll processing, tax filings, and year-end W-2s.",
     href: "/services#payroll",
   },
   {
-    icon: Settings,
+    icon: "ph-wrench",
     name: "QuickBooks Setup",
     description: "Get QuickBooks set up right from the start. We configure it for your business and train you to use it.",
     href: "/services#quickbooks",
   },
   {
-    icon: RefreshCw,
+    icon: "ph-arrow-counter-clockwise",
     name: "Catch-Up Bookkeeping",
     description: "Books behind? We'll clean up the mess, reconcile everything, and get you back on track fast.",
     href: "/services#catchup",
@@ -51,8 +50,8 @@ export default function ServicesOverview() {
               className="group bg-[#FDF5F7] rounded-2xl p-8 border border-[#E8D5DB] hover:border-[#C4849A] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 fade-in"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <div className="w-12 h-12 rounded-xl bg-[#101010] flex items-center justify-center mb-5 group-hover:bg-[#C4849A] transition-colors">
-                <s.icon size={22} className="text-white" />
+              <div className="w-12 h-12 rounded-xl bg-[#101010] flex items-center justify-center mb-5 group-hover:bg-[#C4849A] transition-colors text-white">
+                <i className={`ph ${s.icon}`} style={{ fontSize: '22px', color: 'inherit' }}></i>
               </div>
               <h3 className="text-[#101010] font-black text-xl mb-3"
                 style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -63,7 +62,7 @@ export default function ServicesOverview() {
                 href={s.href}
                 className="inline-flex items-center gap-1.5 text-[#C4849A] font-semibold text-sm hover:gap-3 transition-all"
               >
-                Learn More <ArrowRight size={15} />
+                Learn More <i className="ph ph-arrow-right" style={{ fontSize: '15px' }}></i>
               </Link>
             </div>
           ))}
@@ -74,7 +73,7 @@ export default function ServicesOverview() {
             href="/services"
             className="inline-flex items-center gap-2 bg-[#101010] hover:bg-[#C4849A] text-white font-semibold px-7 py-3.5 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5"
           >
-            View All Services <ArrowRight size={17} />
+            View All Services <i className="ph ph-arrow-right" style={{ fontSize: '17px' }}></i>
           </Link>
         </div>
       </div>

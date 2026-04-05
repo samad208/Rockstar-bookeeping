@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
 import Image from "next/image";
+import { CheckCircle } from "lucide-react";
 
 const credentials = [
   "QuickBooks ProAdvisor Certified",
@@ -17,15 +17,17 @@ export default function AboutPreview() {
 
           {/* Photo */}
           <div className="flex justify-center lg:justify-end fade-in">
-            <div className="relative">
-              <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-2xl bg-[#101010] flex items-center justify-center shadow-xl overflow-hidden">
-                <div className="text-center text-white px-8">
-                  <div className="text-6xl mb-3">👩‍💼</div>
-                  <p className="text-white/40 text-xs uppercase tracking-widest"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Founder Photo</p>
-                </div>
-              </div>
-              {/* Pink star badge */}
+            <div className="relative inline-block">
+              {/* REPLACE: swap this src with the real founder photo */}
+              <Image
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80"
+                alt="Rockstar Bookkeeping founder"
+                width={380}
+                height={475}
+                className="rounded-2xl object-cover shadow-xl"
+                style={{ maxWidth: '380px', width: '100%' }}
+              />
+              {/* Pink badge */}
               <div className="absolute -bottom-4 -right-4 bg-[#eabfd3] rounded-xl px-4 py-3 shadow-lg flex items-center gap-2">
                 <Image src="/star-icon.svg" alt="" width={16} height={16} className="w-4 h-4 shrink-0" />
                 <div>
@@ -59,7 +61,7 @@ export default function AboutPreview() {
               href="/about"
               className="inline-flex items-center gap-2 text-[#C4849A] font-semibold hover:gap-3 transition-all"
             >
-              Meet the Team <ArrowRight size={17} />
+              Meet the Team <i className="ph ph-arrow-right" style={{ fontSize: '17px' }}></i>
             </Link>
           </div>
         </div>

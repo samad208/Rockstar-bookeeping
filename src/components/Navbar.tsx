@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
@@ -77,7 +76,10 @@ export default function Navbar() {
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            {menuOpen
+              ? <i className="ph ph-x" style={{ fontSize: '24px' }}></i>
+              : <i className="ph ph-list" style={{ fontSize: '24px' }}></i>
+            }
           </button>
         </nav>
       </header>

@@ -22,14 +22,14 @@ export default function Testimonials() {
   return (
     <section className="bg-[#101010] py-20 lg:py-28 relative overflow-hidden">
 
-      {/* Decorative star background — far right */}
-      <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-96 h-96 opacity-[0.06] pointer-events-none select-none">
+      {/* Decorative star background — subtle, far right */}
+      <div className="absolute -right-24 top-1/2 -translate-y-1/2 w-96 h-96 opacity-[0.04] pointer-events-none select-none">
         <Image src="/star-icon.svg" alt="" width={384} height={384} className="w-full h-full" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          {/* Mini star above heading */}
+          {/* Branded accent star above label — keep */}
           <div className="flex justify-center mb-4">
             <Image src="/star-icon.svg" alt="" width={36} height={36} className="w-9 h-9 opacity-80" />
           </div>
@@ -48,7 +48,10 @@ export default function Testimonials() {
               className="bg-white/5 border border-white/10 hover:border-[#eabfd3]/50 rounded-2xl p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <Image src="/star-icon.svg" alt="" width={32} height={32} className="w-8 h-8 mb-5 opacity-90" />
+              {/* Rating stars — unicode ★ */}
+              <div className="mb-5" style={{ color: '#E8A0B4', fontSize: '14px', letterSpacing: '2px' }}>
+                ★★★★★
+              </div>
               <p className="text-white/80 text-base leading-relaxed mb-6 flex-1">
                 &ldquo;{t.quote}&rdquo;
               </p>

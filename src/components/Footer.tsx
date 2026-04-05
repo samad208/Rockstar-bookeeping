@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Image from "next/image";
 
 const services = [
@@ -93,23 +92,23 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Phone size={14} className="text-[#C4849A] mt-0.5 shrink-0" />
+                <i className="ph ph-phone text-[#C4849A] mt-0.5 shrink-0" style={{ fontSize: '14px' }}></i>
                 <a href="tel:+17705809908" className="text-white/40 hover:text-white text-sm transition-colors">
                   (770) 580-9908
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Mail size={14} className="text-[#C4849A] mt-0.5 shrink-0" />
+                <i className="ph ph-envelope text-[#C4849A] mt-0.5 shrink-0" style={{ fontSize: '14px' }}></i>
                 <a href="mailto:RockstarBookkeeping@outlook.com" className="text-white/40 hover:text-white text-sm transition-colors break-all">
                   RockstarBookkeeping@outlook.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin size={14} className="text-[#C4849A] mt-0.5 shrink-0" />
+                <i className="ph ph-map-pin text-[#C4849A] mt-0.5 shrink-0" style={{ fontSize: '14px' }}></i>
                 <span className="text-white/40 text-sm">Alpharetta, GA</span>
               </li>
               <li className="flex items-start gap-3">
-                <Clock size={14} className="text-[#C4849A] mt-0.5 shrink-0" />
+                <i className="ph ph-clock text-[#C4849A] mt-0.5 shrink-0" style={{ fontSize: '14px' }}></i>
                 <span className="text-white/40 text-sm">Mon–Fri: 9am – 5pm</span>
               </li>
             </ul>

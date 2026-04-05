@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Phone, Mail, Clock, MapPin, CheckCircle } from "lucide-react";
 
 const serviceOptions = [
   "Monthly Bookkeeping",
@@ -125,7 +124,7 @@ export default function ContactPage() {
             <div className="lg:col-span-3">
               {submitted ? (
                 <div className="bg-white border border-[#E8D5DB] rounded-2xl p-10 text-center">
-                  <CheckCircle size={48} className="text-[#eabfd3] mx-auto mb-4" />
+                  <i className="ph ph-check-circle text-[#eabfd3] mx-auto mb-4 block" style={{ fontSize: '48px' }}></i>
                   <h2 className="text-[#101010] text-2xl font-black mb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}>
                     Thank you, {firstName}!
@@ -223,26 +222,26 @@ export default function ContactPage() {
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <Phone size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <i className="ph ph-phone text-[#eabfd3] mt-0.5 shrink-0" style={{ fontSize: '17px' }}></i>
                     <a href="tel:+17705809908" className="text-[#101010] text-sm font-medium hover:text-[#eabfd3] transition-colors">
                       (770) 580-9908
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Mail size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <i className="ph ph-envelope text-[#eabfd3] mt-0.5 shrink-0" style={{ fontSize: '17px' }}></i>
                     <a href="mailto:RockstarBookkeeping@outlook.com" className="text-[#101010] text-sm font-medium hover:text-[#eabfd3] transition-colors break-all">
                       RockstarBookkeeping@outlook.com
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Clock size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <i className="ph ph-clock text-[#eabfd3] mt-0.5 shrink-0" style={{ fontSize: '17px' }}></i>
                     <div>
                       <p className="text-[#101010] text-sm font-medium">Monday – Friday</p>
                       <p className="text-[#6B6B6B] text-sm">9:00 AM – 5:00 PM ET</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <i className="ph ph-map-pin text-[#eabfd3] mt-0.5 shrink-0" style={{ fontSize: '17px' }}></i>
                     <div>
                       <p className="text-[#101010] text-sm font-medium">Alpharetta, GA</p>
                       <p className="text-[#6B6B6B] text-xs mt-0.5">Serving greater Atlanta area</p>

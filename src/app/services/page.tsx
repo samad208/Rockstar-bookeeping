@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle, ArrowRight } from "lucide-react";
 import CTA from "@/components/sections/CTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -124,7 +123,7 @@ export default function ServicesPage() {
               <ul className="space-y-2.5 mb-6">
                 {s.bullets.map((b) => (
                   <li key={b} className="flex items-start gap-3 text-[#101010] text-sm font-medium">
-                    <CheckCircle size={17} className="text-[#eabfd3] shrink-0 mt-0.5" />
+                    <i className="ph ph-check-circle text-[#eabfd3] shrink-0 mt-0.5" style={{ fontSize: '17px' }}></i>
                     {b}
                   </li>
                 ))}
@@ -138,7 +137,7 @@ export default function ServicesPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-[#101010] hover:bg-[#eabfd3] text-white hover:text-[#101010] font-bold px-6 py-3 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5"
               >
-                Book a Call About This Service <ArrowRight size={16} />
+                Book a Call About This Service <i className="ph ph-arrow-right" style={{ fontSize: '16px' }}></i>
               </Link>
             </div>
           ))}

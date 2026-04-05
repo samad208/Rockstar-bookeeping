@@ -1,24 +1,36 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#101010]">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#101010]"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1664575600796-ffa828c5cb6e?w=1600&q=80')",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+      }}
+    >
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ background: "rgba(10, 10, 18, 0.82)" }}
+      />
 
       {/* Large decorative star — top right */}
-      <div className="absolute -top-16 -right-16 w-80 h-80 opacity-10 pointer-events-none select-none">
+      <div className="absolute -top-16 -right-16 w-80 h-80 opacity-[0.04] pointer-events-none select-none z-[1]">
         <Image src="/star-icon.svg" alt="" width={320} height={320} className="w-full h-full" />
       </div>
 
       {/* Large decorative star — bottom left */}
-      <div className="absolute -bottom-20 -left-20 w-72 h-72 opacity-[0.07] pointer-events-none select-none rotate-12">
+      <div className="absolute -bottom-20 -left-20 w-72 h-72 opacity-[0.04] pointer-events-none select-none rotate-12 z-[1]">
         <Image src="/star-icon.svg" alt="" width={288} height={288} className="w-full h-full" />
       </div>
 
       {/* Subtle grid */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.04] z-[1]"
         style={{
           backgroundImage:
             "repeating-linear-gradient(0deg,transparent,transparent 60px,#fff 60px,#fff 61px),repeating-linear-gradient(90deg,transparent,transparent 60px,#fff 60px,#fff 61px)",
@@ -27,7 +39,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
 
-        {/* Star + lines */}
+        {/* Star + lines — branded accent mark, keep */}
         <div className="flex justify-center items-center gap-4 mb-8">
           <div className="h-px w-20 bg-[#eabfd3]/30" />
           <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-12 h-12" />
@@ -63,7 +75,7 @@ export default function Hero() {
             href="/contact"
             className="inline-flex items-center justify-center gap-2 bg-[#eabfd3] hover:bg-[#d4a0b8] text-[#101010] font-bold text-lg px-9 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 w-full sm:w-auto min-h-[52px]"
           >
-            Book Your Free Call <ArrowRight size={20} />
+            Book Your Free Call <i className="ph ph-arrow-right" style={{ fontSize: '20px' }}></i>
           </Link>
           <Link
             href="/services"
@@ -99,7 +111,7 @@ export default function Hero() {
       </div>
 
       {/* Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 z-10">
         <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 80L1440 80L1440 40C1200 80 960 0 720 20C480 40 240 80 0 40L0 80Z" fill="white"/>
         </svg>
