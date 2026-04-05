@@ -6,6 +6,7 @@ import ServicesOverview from "@/components/sections/ServicesOverview";
 import AboutPreview from "@/components/sections/AboutPreview";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Testimonials from "@/components/sections/Testimonials";
+import BookingSection from "@/components/sections/BookingSection";
 import CTA from "@/components/sections/CTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -69,6 +70,7 @@ export default function HomePage() {
       <AboutPreview />
       <HowItWorks />
       <Testimonials />
+      <BookingSection />
       <CTA />
     </>
   );

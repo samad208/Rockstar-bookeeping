@@ -48,7 +48,7 @@ export default function Hero() {
         {/* Star + lines — branded accent mark */}
         <div className="hero-star flex justify-center items-center gap-4 mb-8">
           <div className="h-px w-20 bg-[#eabfd3]/30" />
-          <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-12 h-12" />
+          <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-12 h-12 hero-star-spin" />
           <div className="h-px w-20 bg-[#eabfd3]/30" />
         </div>
 
