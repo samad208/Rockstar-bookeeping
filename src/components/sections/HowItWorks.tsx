@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PhoneCall, Search, TrendingUp } from "lucide-react";
 
 const steps = [
@@ -26,7 +27,7 @@ export default function HowItWorks() {
     <section className="bg-white py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-[#C4849A] text-lg tracking-[0.25em] uppercase mb-3"
+          <p className="text-[#eabfd3] text-lg tracking-[0.25em] uppercase mb-3"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Simple Process</p>
           <h2 className="text-[#101010] text-4xl sm:text-5xl font-black mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}>
@@ -41,14 +42,19 @@ export default function HowItWorks() {
           {steps.map((step, i) => (
             <div
               key={i}
-              className="relative text-center bg-[#FDF5F7] rounded-2xl p-8 border border-[#E8D5DB] hover:border-[#C4849A] hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-in"
+              className="relative text-center bg-[#FDF5F7] rounded-2xl p-8 border border-[#E8D5DB] hover:border-[#eabfd3] hover:shadow-md hover:-translate-y-1 transition-all duration-300 fade-in"
               style={{ transitionDelay: `${i * 150}ms` }}
             >
+              {/* Star watermark */}
+              <div className="absolute top-3 right-3 w-10 h-10 opacity-20">
+                <Image src="/star-icon.svg" alt="" width={40} height={40} className="w-full h-full" />
+              </div>
+
               <div className="w-14 h-14 rounded-full bg-[#101010] flex items-center justify-center mx-auto mb-4 shadow-md">
                 <step.icon size={24} className="text-white" />
               </div>
               <div
-                className="text-[#C4849A] text-5xl font-black mb-2 leading-none"
+                className="text-[#eabfd3] text-5xl font-black mb-2 leading-none"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {step.number}

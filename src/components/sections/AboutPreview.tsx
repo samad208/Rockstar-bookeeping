@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import Image from "next/image";
 
 const credentials = [
   "QuickBooks ProAdvisor Certified",
@@ -25,8 +26,8 @@ export default function AboutPreview() {
                 </div>
               </div>
               {/* Pink star badge */}
-              <div className="absolute -bottom-4 -right-4 bg-[#C4849A] rounded-xl px-4 py-3 shadow-lg flex items-center gap-2">
-                <Star size={16} className="text-white fill-white" />
+              <div className="absolute -bottom-4 -right-4 bg-[#eabfd3] rounded-xl px-4 py-3 shadow-lg flex items-center gap-2">
+                <Image src="/star-icon.svg" alt="" width={16} height={16} className="w-4 h-4 shrink-0" />
                 <div>
                   <p className="text-white font-bold text-xs">QuickBooks</p>
                   <p className="text-white/80 text-[10px]">ProAdvisor</p>
