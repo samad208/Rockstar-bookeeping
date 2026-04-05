@@ -1,12 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, Mail, Clock, MapPin, CheckCircle } from "lucide-react";
-
-// Note: metadata must be in a server component. We export it separately below.
-// Since this page uses client hooks, metadata is in a separate layout or
-// we handle it via the template in layout.tsx.
 
 const serviceOptions = [
   "Monthly Bookkeeping",
@@ -70,7 +66,6 @@ export default function ContactPage() {
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
     setLoading(true);
-    // Simulated submission — replace with your form handler / API route
     await new Promise((r) => setTimeout(r, 1200));
     setLoading(false);
     setSubmitted(true);
@@ -104,37 +99,45 @@ export default function ContactPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a3c5e] to-[#2563a8] pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-5" style={{ fontFamily: "Sora,sans-serif" }}>
-            Book Your Free Consultation in Alpharetta, GA
+      <section className="bg-[#101010] pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute -top-10 -left-10 w-64 h-64 opacity-[0.07] pointer-events-none select-none -rotate-12">
+          <Image src="/star-icon.svg" alt="" width={256} height={256} className="w-full h-full" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-[#eabfd3] text-lg tracking-[0.25em] uppercase mb-4"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Get In Touch</p>
+          <h1 className="text-white text-4xl sm:text-5xl font-black mb-5 leading-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
+            Book Your Free Consultation<br className="hidden sm:block" /> in Alpharetta, GA
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-white/70 text-lg max-w-xl mx-auto">
             No pressure. No sales pitch. Just a real conversation about your business and how we can help.
           </p>
         </div>
       </section>
 
       {/* Form + sidebar */}
-      <section className="bg-white py-20">
+      <section className="bg-[#FDF5F7] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
 
             {/* Form */}
             <div className="lg:col-span-3">
               {submitted ? (
-                <div className="bg-[#f0fdf4] border border-green-200 rounded-2xl p-10 text-center">
-                  <CheckCircle size={48} className="text-green-500 mx-auto mb-4" />
-                  <h2 className="text-[#0f172a] text-2xl font-extrabold mb-3" style={{ fontFamily: "Sora,sans-serif" }}>
+                <div className="bg-white border border-[#E8D5DB] rounded-2xl p-10 text-center">
+                  <CheckCircle size={48} className="text-[#eabfd3] mx-auto mb-4" />
+                  <h2 className="text-[#101010] text-2xl font-black mb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}>
                     Thank you, {firstName}!
                   </h2>
-                  <p className="text-[#475569] text-base">
+                  <p className="text-[#6B6B6B] text-base">
                     We'll be in touch within 1 business day to schedule your free call. Check your inbox!
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  <h2 className="text-[#0f172a] text-2xl font-extrabold mb-6" style={{ fontFamily: "Sora,sans-serif" }}>
+                  <h2 className="text-[#101010] text-2xl font-black mb-6"
+                    style={{ fontFamily: "'Playfair Display', serif" }}>
                     Tell Us About Yourself
                   </h2>
 
@@ -145,7 +148,7 @@ export default function ContactPage() {
                     { id: "phone", label: "Phone Number", type: "tel", placeholder: "(770) 000-0000" },
                   ].map((field) => (
                     <div key={field.id}>
-                      <label htmlFor={field.id} className="block text-sm font-semibold text-[#0f172a] mb-1.5">
+                      <label htmlFor={field.id} className="block text-sm font-semibold text-[#101010] mb-1.5">
                         {field.label}
                       </label>
                       <input
@@ -154,8 +157,8 @@ export default function ContactPage() {
                         placeholder={field.placeholder}
                         value={form[field.id as keyof typeof form]}
                         onChange={(e) => setForm({ ...form, [field.id]: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl border text-[#0f172a] text-base placeholder:text-slate-400 bg-[#f8fafc] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#2563a8] focus:border-[#2563a8] min-h-[48px] ${
-                          errors[field.id] ? "border-red-400 bg-red-50" : "border-slate-200"
+                        className={`w-full px-4 py-3 rounded-xl border text-[#101010] text-base placeholder:text-[#6B6B6B]/60 bg-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#eabfd3] focus:border-[#eabfd3] min-h-[48px] ${
+                          errors[field.id] ? "border-red-400 bg-red-50" : "border-[#E8D5DB]"
                         }`}
                       />
                       {errors[field.id] && (
@@ -165,14 +168,14 @@ export default function ContactPage() {
                   ))}
 
                   <div>
-                    <label htmlFor="service" className="block text-sm font-semibold text-[#0f172a] mb-1.5">
+                    <label htmlFor="service" className="block text-sm font-semibold text-[#101010] mb-1.5">
                       How Can We Help?
                     </label>
                     <select
                       id="service"
                       value={form.service}
                       onChange={(e) => setForm({ ...form, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 text-[#0f172a] text-base bg-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-[#2563a8] focus:border-[#2563a8] min-h-[48px]"
+                      className="w-full px-4 py-3 rounded-xl border border-[#E8D5DB] text-[#101010] text-base bg-white focus:outline-none focus:ring-2 focus:ring-[#eabfd3] focus:border-[#eabfd3] min-h-[48px]"
                     >
                       <option value="">Select a service...</option>
                       {serviceOptions.map((o) => (
@@ -182,7 +185,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-[#0f172a] mb-1.5">
+                    <label htmlFor="message" className="block text-sm font-semibold text-[#101010] mb-1.5">
                       Anything Else We Should Know?
                     </label>
                     <textarea
@@ -191,8 +194,8 @@ export default function ContactPage() {
                       placeholder="Tell us a bit about your business and what's going on with your finances..."
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className={`w-full px-4 py-3 rounded-xl border text-[#0f172a] text-base placeholder:text-slate-400 bg-[#f8fafc] resize-y focus:outline-none focus:ring-2 focus:ring-[#2563a8] focus:border-[#2563a8] transition-all duration-200 ${
-                        errors.message ? "border-red-400 bg-red-50" : "border-slate-200"
+                      className={`w-full px-4 py-3 rounded-xl border text-[#101010] text-base placeholder:text-[#6B6B6B]/60 bg-white resize-y focus:outline-none focus:ring-2 focus:ring-[#eabfd3] focus:border-[#eabfd3] transition-all duration-200 ${
+                        errors.message ? "border-red-400 bg-red-50" : "border-[#E8D5DB]"
                       }`}
                     />
                     {errors.message && (
@@ -203,7 +206,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-[#f59e0b] hover:bg-[#fbbf24] disabled:opacity-60 text-[#0f172a] font-bold text-lg py-4 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5 min-h-[52px]"
+                    className="w-full bg-[#eabfd3] hover:bg-[#d4a0b8] disabled:opacity-60 text-[#101010] font-bold text-lg py-4 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5 min-h-[52px]"
                   >
                     {loading ? "Sending..." : "Send My Message"}
                   </button>
@@ -212,62 +215,69 @@ export default function ContactPage() {
             </div>
 
             {/* Sidebar */}
-            <div className="lg:col-span-2 space-y-8">
-              <div className="bg-[#f8fafc] rounded-2xl border border-slate-200 p-7">
-                <h3 className="text-[#0f172a] font-extrabold text-lg mb-5" style={{ fontFamily: "Sora,sans-serif" }}>
+            <div className="lg:col-span-2 space-y-6">
+              <div className="bg-white rounded-2xl border border-[#E8D5DB] p-7">
+                <h3 className="text-[#101010] font-black text-lg mb-5"
+                  style={{ fontFamily: "'Playfair Display', serif" }}>
                   Contact Info
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <Phone size={17} className="text-[#f59e0b] mt-0.5 shrink-0" />
-                    <a href="tel:+17705809908" className="text-[#0f172a] text-sm font-medium hover:text-[#2563a8] transition-colors">
+                    <Phone size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <a href="tel:+17705809908" className="text-[#101010] text-sm font-medium hover:text-[#eabfd3] transition-colors">
                       (770) 580-9908
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Mail size={17} className="text-[#f59e0b] mt-0.5 shrink-0" />
-                    <a href="mailto:RockstarBookkeeping@outlook.com" className="text-[#0f172a] text-sm font-medium hover:text-[#2563a8] transition-colors break-all">
+                    <Mail size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
+                    <a href="mailto:RockstarBookkeeping@outlook.com" className="text-[#101010] text-sm font-medium hover:text-[#eabfd3] transition-colors break-all">
                       RockstarBookkeeping@outlook.com
                     </a>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Clock size={17} className="text-[#f59e0b] mt-0.5 shrink-0" />
+                    <Clock size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-[#0f172a] text-sm font-medium">Monday – Friday</p>
-                      <p className="text-[#475569] text-sm">9:00 AM – 5:00 PM ET</p>
+                      <p className="text-[#101010] text-sm font-medium">Monday – Friday</p>
+                      <p className="text-[#6B6B6B] text-sm">9:00 AM – 5:00 PM ET</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <MapPin size={17} className="text-[#f59e0b] mt-0.5 shrink-0" />
+                    <MapPin size={17} className="text-[#eabfd3] mt-0.5 shrink-0" />
                     <div>
-                      <p className="text-[#0f172a] text-sm font-medium">Alpharetta, GA</p>
-                      <p className="text-[#475569] text-xs mt-0.5">Serving greater Atlanta area</p>
+                      <p className="text-[#101010] text-sm font-medium">Alpharetta, GA</p>
+                      <p className="text-[#6B6B6B] text-xs mt-0.5">Serving greater Atlanta area</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-[#1a3c5e] rounded-2xl p-7 text-white">
-                <p className="text-[#f59e0b] text-xs font-bold uppercase tracking-widest mb-2">Promise</p>
-                <p className="font-semibold text-lg leading-snug mb-2" style={{ fontFamily: "Sora,sans-serif" }}>
+              <div className="bg-[#101010] rounded-2xl p-7 text-white relative overflow-hidden">
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 opacity-10 pointer-events-none">
+                  <Image src="/star-icon.svg" alt="" width={96} height={96} className="w-full h-full" />
+                </div>
+                <p className="text-[#eabfd3] text-xs font-bold uppercase tracking-widest mb-2"
+                  style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Our Promise</p>
+                <p className="font-black text-lg leading-snug mb-2"
+                  style={{ fontFamily: "'Playfair Display', serif" }}>
                   We respond within 1 business day.
                 </p>
-                <p className="text-white/70 text-sm leading-relaxed">
+                <p className="text-white/60 text-sm leading-relaxed">
                   Usually faster. You won't be left waiting and wondering.
                 </p>
               </div>
 
               {/* Mini FAQ */}
-              <div className="bg-[#f8fafc] rounded-2xl border border-slate-200 p-7">
-                <h3 className="text-[#0f172a] font-extrabold text-lg mb-5" style={{ fontFamily: "Sora,sans-serif" }}>
+              <div className="bg-white rounded-2xl border border-[#E8D5DB] p-7">
+                <h3 className="text-[#101010] font-black text-lg mb-5"
+                  style={{ fontFamily: "'Playfair Display', serif" }}>
                   Quick Answers
                 </h3>
                 <div className="space-y-4">
                   {faqs.map((faq, i) => (
                     <div key={i}>
-                      <p className="text-[#0f172a] font-semibold text-sm mb-1">{faq.q}</p>
-                      <p className="text-[#475569] text-sm leading-relaxed">{faq.a}</p>
-                      {i < faqs.length - 1 && <div className="border-b border-slate-200 mt-4" />}
+                      <p className="text-[#101010] font-semibold text-sm mb-1">{faq.q}</p>
+                      <p className="text-[#6B6B6B] text-sm leading-relaxed">{faq.a}</p>
+                      {i < faqs.length - 1 && <div className="border-b border-[#E8D5DB] mt-4" />}
                     </div>
                   ))}
                 </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Star } from "lucide-react";
+import Image from "next/image";
 import CTA from "@/components/sections/CTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -76,28 +76,38 @@ export default function TestimonialsPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a3c5e] to-[#2563a8] pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-5" style={{ fontFamily: "Sora,sans-serif" }}>
+      <section className="bg-[#101010] pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 opacity-[0.06] pointer-events-none select-none">
+          <Image src="/star-icon.svg" alt="" width={320} height={320} className="w-full h-full" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex justify-center mb-5">
+            <Image src="/star-icon.svg" alt="" width={44} height={44} className="w-11 h-11 opacity-90" />
+          </div>
+          <p className="text-[#eabfd3] text-lg tracking-[0.25em] uppercase mb-4"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Client Love</p>
+          <h1 className="text-white text-4xl sm:text-5xl font-black mb-5 leading-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
             What Our Clients Say
           </h1>
-          <p className="text-white/80 text-lg max-w-xl mx-auto">
+          <p className="text-white/70 text-lg max-w-xl mx-auto">
             Real small business owners. Real results. No fake reviews, no corporate fluff.
           </p>
-          <div className="flex justify-center gap-1 mt-6">
+          <div className="flex justify-center gap-2 mt-6">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} size={24} className="text-[#f59e0b]" fill="#f59e0b" />
+              <Image key={i} src="/star-icon.svg" alt="" width={22} height={22} className="w-5.5 h-5.5" />
             ))}
           </div>
-          <p className="text-white/60 text-sm mt-2">5.0 average across all clients</p>
+          <p className="text-white/50 text-sm mt-2">5.0 average across all clients</p>
         </div>
       </section>
 
       {/* Video placeholder */}
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-[#475569] text-sm font-semibold uppercase tracking-widest mb-6">Featured Story</p>
-          <div className="relative w-full aspect-video bg-[#0f172a] rounded-2xl shadow-xl flex items-center justify-center overflow-hidden">
+          <p className="text-center text-[#eabfd3] text-sm tracking-[0.2em] uppercase mb-6"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>Featured Story</p>
+          <div className="relative w-full aspect-video bg-[#101010] rounded-2xl shadow-xl flex items-center justify-center overflow-hidden border border-[#E8D5DB]">
             <div className="text-center text-white/50">
               <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-4">
                 <svg viewBox="0 0 24 24" fill="white" className="w-8 h-8 ml-1"><polygon points="5 3 19 12 5 21 5 3" /></svg>
@@ -109,26 +119,23 @@ export default function TestimonialsPage() {
       </section>
 
       {/* Grid */}
-      <section className="bg-[#f8fafc] py-20">
+      <section className="bg-[#FDF5F7] py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="bg-white rounded-2xl p-7 border border-slate-200 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
+                className="bg-white rounded-2xl p-7 border border-[#E8D5DB] hover:border-[#eabfd3] hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col fade-in"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={15} className="text-[#f59e0b]" fill="#f59e0b" />
-                  ))}
-                </div>
-                <p className="text-[#0f172a] text-base leading-relaxed flex-1 mb-5">
+                <Image src="/star-icon.svg" alt="" width={28} height={28} className="w-7 h-7 mb-4 opacity-90" />
+                <p className="text-[#101010] text-base leading-relaxed flex-1 mb-5">
                   &ldquo;{t.quote}&rdquo;
                 </p>
-                <div className="border-t border-slate-100 pt-4">
-                  <p className="font-bold text-[#0f172a] text-sm" style={{ fontFamily: "Sora,sans-serif" }}>{t.name}</p>
-                  <p className="text-[#475569] text-xs mt-0.5">{t.business}</p>
+                <div className="border-t border-[#E8D5DB] pt-4">
+                  <p className="font-black text-[#101010] text-sm"
+                    style={{ fontFamily: "'Playfair Display', serif" }}>{t.name}</p>
+                  <p className="text-[#6B6B6B] text-xs mt-0.5">{t.business}</p>
                 </div>
               </div>
             ))}

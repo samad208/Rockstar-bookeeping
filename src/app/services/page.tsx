@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import CTA from "@/components/sections/CTA";
 import ScrollAnimations from "@/components/ScrollAnimations";
 
@@ -78,50 +79,64 @@ export default function ServicesPage() {
   return (
     <>
       <ScrollAnimations />
+
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1a3c5e] to-[#2563a8] pt-32 pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-white text-4xl sm:text-5xl font-extrabold mb-5" style={{ fontFamily: "Sora,sans-serif" }}>
-            Bookkeeping Services for Small Businesses in Atlanta
+      <section className="bg-[#101010] pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute -top-16 -right-16 w-72 h-72 opacity-[0.07] pointer-events-none select-none">
+          <Image src="/star-icon.svg" alt="" width={288} height={288} className="w-full h-full" />
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-[#eabfd3] text-lg tracking-[0.25em] uppercase mb-4"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}>What We Offer</p>
+          <h1 className="text-white text-4xl sm:text-5xl font-black mb-5 leading-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}>
+            Bookkeeping Services for<br className="hidden sm:block" /> Small Businesses in Atlanta
           </h1>
-          <p className="text-white/80 text-lg sm:text-xl max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg sm:text-xl max-w-2xl mx-auto">
             No corporate jargon. No surprise fees. Just the financial support your business actually needs.
           </p>
         </div>
       </section>
 
       {/* Services */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      <section className="bg-[#FDF5F7] py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {services.map((s, i) => (
             <div
               key={s.id}
               id={s.id}
-              className="bg-[#f8fafc] rounded-2xl border border-slate-200 p-8 sm:p-10 fade-in"
+              className="bg-white rounded-2xl border border-[#E8D5DB] p-8 sm:p-10 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 fade-in relative overflow-hidden"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <p className="text-[#f59e0b] text-sm font-semibold uppercase tracking-wider mb-2">{s.tagline}</p>
-              <h2 className="text-[#0f172a] text-2xl sm:text-3xl font-extrabold mb-4" style={{ fontFamily: "Sora,sans-serif" }}>
+              {/* Watermark star */}
+              <div className="absolute top-4 right-4 w-12 h-12 opacity-10 pointer-events-none">
+                <Image src="/star-icon.svg" alt="" width={48} height={48} className="w-full h-full" />
+              </div>
+
+              <p className="text-[#eabfd3] text-sm font-semibold uppercase tracking-[0.2em] mb-2"
+                style={{ fontFamily: "'Bebas Neue', sans-serif" }}>{s.tagline}</p>
+              <h2 className="text-[#101010] text-2xl sm:text-3xl font-black mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}>
                 {s.name}
               </h2>
-              <p className="text-[#475569] text-base leading-relaxed mb-6">{s.description}</p>
+              <p className="text-[#6B6B6B] text-base leading-relaxed mb-6">{s.description}</p>
 
               <ul className="space-y-2.5 mb-6">
                 {s.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-[#0f172a] text-sm">
-                    <CheckCircle2 size={17} className="text-[#2563a8] shrink-0 mt-0.5" />
+                  <li key={b} className="flex items-start gap-3 text-[#101010] text-sm font-medium">
+                    <CheckCircle size={17} className="text-[#eabfd3] shrink-0 mt-0.5" />
                     {b}
                   </li>
                 ))}
               </ul>
 
-              <p className="text-[#475569] text-sm italic mb-6">
-                <strong className="text-[#0f172a] not-italic">Best for:</strong> {s.bestFor}
+              <p className="text-[#6B6B6B] text-sm italic mb-6">
+                <strong className="text-[#101010] not-italic">Best for:</strong> {s.bestFor}
               </p>
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#1a3c5e] hover:bg-[#2563a8] text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 bg-[#101010] hover:bg-[#eabfd3] text-white hover:text-[#101010] font-bold px-6 py-3 rounded-full transition-all duration-200 shadow hover:shadow-md hover:-translate-y-0.5"
               >
                 Book a Call About This Service <ArrowRight size={16} />
               </Link>
