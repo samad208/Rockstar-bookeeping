@@ -244,11 +244,37 @@ h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
   .bc-day  { font-size:0.75rem; }
 }
 
-/* ─── Tool logos (SocialProof) ───────────────── */
-.tool-logo {
-  height: 28px;
-  width: auto;
-  filter: grayscale(100%) opacity(0.55);
-  transition: filter 0.2s ease;
+/* ─── SocialProof marquee ────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
-.tool-logo:hover { filter: grayscale(0%) opacity(1); }
+
+.sp-marquee-mask {
+  width: 100%;
+  overflow: hidden;
+  /* soft fade on edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image:         linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.sp-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+}
+.sp-marquee-track:hover { animation-play-state: paused; }
+
+.sp-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  filter: grayscale(100%) opacity(0.45);
+  transition: filter 0.25s ease, transform 0.25s ease;
+  cursor: default;
+}
+.sp-logo-item:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.08);
+}
