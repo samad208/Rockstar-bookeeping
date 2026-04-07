@@ -5,13 +5,13 @@ import BookingCalendar from "@/components/BookingCalendar";
 export const metadata: Metadata = {
   title: "Book a Free Consultation | Rockstar Bookkeeping | Alpharetta GA",
   description:
-    "Book a free 20-minute call with Rockstar Bookkeeping in Alpharetta, GA. No pressure, no commitment — just a real conversation about your business finances.",
+    "Book a free 20-minute call with Rockstar Bookkeeping in Alpharetta, GA. No pressure, no commitment. Just a real conversation about your business finances.",
   alternates: { canonical: "https://www.rockstar-bookkeeping.com/contact" },
 };
 
 const faqs = [
   { q: "Is the first call really free?",       a: "Yes, completely. No credit card, no obligation. It's just a conversation." },
-  { q: "How quickly will you respond?",        a: "Within 1 business day — usually the same day if you reach out in the morning." },
+  { q: "How quickly will you respond?",        a: "Within 1 business day. Usually the same day if you reach out in the morning." },
   { q: "Do you work outside Alpharetta?",      a: "Absolutely. We serve clients all over greater Atlanta and work virtually with clients anywhere." },
   { q: "I'm embarrassed about my books.",      a: "100% okay. We've seen it all and we never judge. Messy books are literally our specialty." },
   { q: "What happens after I book?",           a: "You'll get a confirmation and we'll be ready for your call at the time you selected." },

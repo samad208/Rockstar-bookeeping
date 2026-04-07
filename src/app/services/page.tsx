@@ -7,7 +7,7 @@ import ScrollAnimations from "@/components/ScrollAnimations";
 export const metadata: Metadata = {
   title: "Bookkeeping Services Atlanta | Rockstar Bookkeeping | Alpharetta GA",
   description:
-    "Comprehensive bookkeeping services in Atlanta, GA. From monthly bookkeeping to payroll and QuickBooks setup — Rockstar Bookkeeping keeps your finances accurate.",
+    "Comprehensive bookkeeping services in Atlanta, GA. From monthly bookkeeping to payroll and QuickBooks setup. Rockstar Bookkeeping keeps your finances accurate.",
   alternates: { canonical: "https://www.rockstar-bookkeeping.com/services" },
 };
 
@@ -17,7 +17,7 @@ const services = [
     name: "Monthly Bookkeeping",
     tagline: "Always know where your money stands.",
     description:
-      "We categorize every transaction, reconcile your accounts, and deliver clean monthly financials — so you're never flying blind.",
+      "We categorize every transaction, reconcile your accounts, and deliver clean monthly financials so you're never flying blind.",
     bullets: [
       "Monthly transaction categorization",
       "Bank and credit card reconciliation",
@@ -32,7 +32,7 @@ const services = [
     name: "Payroll Management",
     tagline: "Pay your team right. Every time.",
     description:
-      "Payroll is one of the most important — and most stressful — parts of running a business. We handle everything so your team gets paid accurately and on time.",
+      "Payroll is one of the most important and most stressful parts of running a business. We handle everything so your team gets paid accurately and on time.",
     bullets: [
       "Full payroll processing for employees & contractors",
       "Direct deposit setup",
@@ -47,7 +47,7 @@ const services = [
     name: "QuickBooks Setup & Training",
     tagline: "Get QuickBooks working for you, not against you.",
     description:
-      "A badly set up QuickBooks file causes more problems than it solves. We configure it correctly for your business from day one — and we teach you how to use it.",
+      "A badly set up QuickBooks file causes more problems than it solves. We configure it correctly for your business from day one and teach you how to use it.",
     bullets: [
       "Custom chart of accounts setup",
       "Integration with your bank and tools",
@@ -62,7 +62,7 @@ const services = [
     name: "Catch-Up Bookkeeping",
     tagline: "Behind on your books? We've seen worse.",
     description:
-      "Whether you're a few months behind or a few years, we'll sort it out. No judgment — just clean books and a clear path forward.",
+      "Whether you're a few months behind or a few years, we'll sort it out. No judgment. Just clean books and a clear path forward.",
     bullets: [
       "Review and categorize all past transactions",
       "Reconcile accounts for previous periods",

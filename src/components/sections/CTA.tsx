@@ -25,7 +25,7 @@ export default function CTA() {
           Ready to Stop Stressing<br className="hidden sm:block" /> About Your Books?
         </h2>
         <p className="text-[#6B6B6B] text-lg sm:text-xl mb-10 max-w-xl mx-auto">
-          The first call is free and there&apos;s zero pressure — just an honest conversation about how we can help.
+          The first call is free and there&apos;s zero pressure. Just an honest conversation about how we can help.
         </p>
 
         <Link

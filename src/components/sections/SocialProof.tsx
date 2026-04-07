@@ -88,7 +88,7 @@ export default function SocialProof() {
               <span className="text-[#E8A0B4] text-sm shrink-0" style={{ letterSpacing: "2px" }}>★★★★★</span>
               <p className="text-[#101010] text-sm">
                 <span className="font-medium">&ldquo;{s.quote}&rdquo;</span>
-                <span className="text-[#6B6B6B] text-xs ml-1">— {s.author}</span>
+                <span className="text-[#6B6B6B] text-xs ml-1">{s.author}</span>
               </p>
             </div>
           ))}

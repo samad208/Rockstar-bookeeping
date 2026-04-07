@@ -4,7 +4,7 @@ const services = [
   {
     icon: "ph-book-open",
     name: "Monthly Bookkeeping",
-    description: "Accurate, on-time books every month. No more mystery numbers — just clear financials you can act on.",
+    description: "Accurate, on-time books every month. No more mystery numbers. Just clear financials you can act on.",
     href: "/services#bookkeeping",
   },
   {

@@ -9,7 +9,7 @@ const steps = [
     number: "01",
     title: "Book a Free Call",
     description:
-      "Schedule a quick 20-minute call — no pressure, no sales pitch. We'll have a real conversation about what's going on with your finances and what you actually need.",
+      "Schedule a quick 20-minute call. No pressure, no sales pitch. We'll have a real conversation about what's going on with your finances and what you actually need.",
     clientExperience:
       "You pick a time that works for you, show up to a video or phone call, and just talk. No prep needed.",
     weHandle:
@@ -19,7 +19,7 @@ const steps = [
     number: "02",
     title: "We Review Your Books",
     description:
-      "After our call, we take a close look at your financials — wherever they are, however messy they might be. We put together a clear plan and give you a straight quote.",
+      "After our call, we take a close look at your financials wherever they are, however messy they might be. We put together a clear plan and give you a straight quote.",
     clientExperience:
       "You share access to your accounts and hand things over. That's it.",
     weHandle:
@@ -29,11 +29,11 @@ const steps = [
     number: "03",
     title: "Clean Financials Every Month",
     description:
-      "Once you're set up, we keep your books clean and current month after month. You get easy-to-read reports delivered to your inbox — no spreadsheet skills required.",
+      "Once you're set up, we keep your books clean and current month after month. You get easy-to-read reports delivered to your inbox. No spreadsheet skills required.",
     clientExperience:
       "You check your monthly report, ask questions if you have them, and focus on running your business.",
     weHandle:
-      "Everything — transaction categorization, reconciliations, payroll, reports, and anything else we've agreed on.",
+      "Everything: transaction categorization, reconciliations, payroll, reports, and anything else we've agreed on.",
   },
 ];
 
@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "How much does a bookkeeper cost for a small business?",
     answer:
-      "Costs vary depending on your business size and the services you need. At Rockstar Bookkeeping, we offer customized packages based on your transaction volume and requirements — so you only pay for what you actually use. We'll give you a clear quote after our free discovery call.",
+      "Costs vary depending on your business size and the services you need. At Rockstar Bookkeeping, we offer customized packages based on your transaction volume and requirements, so you only pay for what you actually use. We'll give you a clear quote after our free discovery call.",
   },
   {
     question: "What does a bookkeeper do every month for a small business?",
@@ -51,12 +51,12 @@ const faqs = [
   {
     question: "Do I need a bookkeeper or an accountant?",
     answer:
-      "Most small businesses need a bookkeeper first. A bookkeeper handles your day-to-day financials — recording transactions, keeping your books current, and generating reports. An accountant typically handles tax strategy and higher-level financial advice. Good bookkeeping gives your accountant clean data to work with, often saving you money at tax time.",
+      "Most small businesses need a bookkeeper first. A bookkeeper handles your day-to-day financials: recording transactions, keeping your books current, and generating reports. An accountant typically handles tax strategy and higher-level financial advice. Good bookkeeping gives your accountant clean data to work with, often saving you money at tax time.",
   },
   {
     question: "How do I know if my books are a mess?",
     answer:
-      "Common signs: you haven't reconciled your bank account in months, you're not sure if your business is profitable, you're missing receipts, or you're dreading tax season. If any of that sounds familiar, our Catch-Up Bookkeeping service can get you sorted out — no judgment.",
+      "Common signs: you haven't reconciled your bank account in months, you're not sure if your business is profitable, you're missing receipts, or you're dreading tax season. If any of that sounds familiar, our Catch-Up Bookkeeping service can get you sorted out. No judgment.",
   },
   {
     question: "Is my financial data secure with you?",
@@ -66,7 +66,7 @@ const faqs = [
   {
     question: "How often will I hear from you?",
     answer:
-      "You'll receive your monthly financial reports as soon as they're ready — typically within the first week of the new month. We're also available by email or phone when you have questions. We respond within one business day, usually faster.",
+      "You'll receive your monthly financial reports as soon as they're ready, typically within the first week of the new month. We're also available by email or phone when you have questions. We respond within one business day, usually faster.",
   },
 ];
 

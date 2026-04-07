@@ -96,7 +96,7 @@ export default function AboutPage() {
                 Hi! I&apos;m the person behind Rockstar Bookkeeping.
               </h2>
               <p className="text-[#6B6B6B] text-lg leading-relaxed mb-5">
-                I started this business because I saw too many talented, hardworking small business owners drowning in their own finances. Great at what they do — terrible at bookkeeping. Not because they weren't smart, but because nobody taught them this stuff.
+                I started this business because I saw too many talented, hardworking small business owners drowning in their own finances. Great at what they do. Terrible at bookkeeping. Not because they weren't smart, but because nobody taught them this stuff.
               </p>
               <p className="text-[#6B6B6B] text-base leading-relaxed mb-5">
                 So I stepped in. I'm a QuickBooks ProAdvisor with over a decade of experience helping small businesses in the Atlanta area get their numbers right. I've worked with restaurants, freelancers, contractors, e-commerce stores, and everything in between.

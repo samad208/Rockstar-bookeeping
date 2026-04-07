@@ -23,7 +23,7 @@ export default function AboutPreview() {
               A Real Person Who Cares About Your Business
             </h2>
             <p className="text-[#6B6B6B] text-lg leading-relaxed mb-6">
-              I started Rockstar Bookkeeping because I watched too many small business owners stressed out over their finances. You didn&apos;t start your business to spend your nights in QuickBooks. I did — and I actually enjoy it.
+              I started Rockstar Bookkeeping because I watched too many small business owners stressed out over their finances. You didn&apos;t start your business to spend your nights in QuickBooks. I did. And I actually enjoy it.
             </p>
             <ul className="space-y-2.5 mb-8">
               {credentials.map((c) => (
